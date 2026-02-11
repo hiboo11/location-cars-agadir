@@ -28,6 +28,8 @@ const Navbar = () => {
     { title: t('navbar.contact'), href: '#contact' },
   ];
 
+  const textColor = scrolled ? 'text-warmDark dark:text-warmLight' : 'text-white';
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -38,7 +40,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="text-2xl font-serif font-bold text-warmDark dark:text-warmLight tracking-wide">
+        <a href="#" className={`text-2xl font-serif font-bold tracking-wide ${textColor}`}>
           Lours Cars
         </a>
 
@@ -48,24 +50,24 @@ const Navbar = () => {
             <a
               key={link.title}
               href={link.href}
-              className="text-warmDark/80 dark:text-warmLight/80 hover:text-gold dark:hover:text-gold transition-colors duration-300 font-medium text-sm tracking-wide uppercase"
+              className={`${scrolled ? 'text-warmDark/80 dark:text-warmLight/80' : 'text-white/90'} hover:text-gold dark:hover:text-gold transition-colors duration-300 font-medium text-sm tracking-wide uppercase`}
             >
               {link.title}
             </a>
           ))}
 
           {/* Toggles */}
-          <div className="flex items-center gap-4 border-l border-warmDark/10 dark:border-white/10 pl-4">
+          <div className={`flex items-center gap-4 border-l pl-4 ${scrolled ? 'border-warmDark/10 dark:border-white/10' : 'border-white/20'}`}>
             <button 
               onClick={toggleLanguage}
-              className="flex items-center gap-1 text-sm font-bold text-warmDark dark:text-warmLight hover:text-gold uppercase"
+              className={`flex items-center gap-1 text-sm font-bold hover:text-gold uppercase ${textColor}`}
             >
               <FaGlobe size={14} />
               {language}
             </button>
             <button 
               onClick={toggleTheme}
-              className="text-warmDark dark:text-warmLight hover:text-gold transition-colors"
+              className={`hover:text-gold transition-colors ${textColor}`}
             >
               {theme === 'dark' ? <FaSun size={18} /> : <FaMoon size={18} />}
             </button>
@@ -84,7 +86,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-warmDark dark:text-warmLight hover:text-gold transition-colors"
+          className={`md:hidden hover:text-gold transition-colors ${textColor}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}

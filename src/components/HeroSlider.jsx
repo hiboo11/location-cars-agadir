@@ -2,6 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -10,28 +11,30 @@ import 'swiper/css/pagination';
 
 import BookingBar from './BookingBar';
 
-const slides = [
-  {
-    id: 1,
-    image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2000&auto=format&fit=crop', // S-Class
-    title: 'VIP Transfers Agadir',
-    subtitle: 'Luxury Chauffeur Services'
-  },
-  {
-    id: 2,
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2000&auto=format&fit=crop', // Luxury Interior
-    title: 'Comfort & Elegance',
-    subtitle: 'Premium Fleet for Your Journey'
-  },
-  {
-    id: 3,
-    image: 'https://images.unsplash.com/photo-1563720223185-11003d5169ad?q=80&w=2000&auto=format&fit=crop', // Scenic
-    title: 'Explore Morocco',
-    subtitle: 'Experience Agadir in Style'
-  }
-];
-
 const HeroSlider = () => {
+  const { t } = useLanguage();
+
+  const slides = [
+    {
+      id: 1,
+      image: 'https://images.unsplash.com/photo-1563720223185-11003d5169ad?q=80&w=2000&auto=format&fit=crop',
+      title: t('hero.title1'),
+      subtitle: t('hero.subtitle1')
+    },
+    {
+      id: 2,
+      image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2000&auto=format&fit=crop',
+      title: t('hero.title2'),
+      subtitle: t('hero.subtitle2')
+    },
+    {
+      id: 3,
+      image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2000&auto=format&fit=crop',
+      title: t('hero.title3'),
+      subtitle: t('hero.subtitle3')
+    }
+  ];
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <Swiper
@@ -92,7 +95,7 @@ const HeroSlider = () => {
                   className="px-8 py-3 bg-gold text-warmDark font-bold text-lg rounded-full hover:bg-white transition-colors duration-300"
                   onClick={() => document.getElementById('fleet').scrollIntoView({ behavior: 'smooth' })}
                 >
-                  View Our Fleet
+                  {t('fleet.bookNow')}
                 </motion.button>
               </div>
             </div>

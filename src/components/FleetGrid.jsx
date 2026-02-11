@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CarCard from './CarCard';
 import { fleetData } from '../data/data';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const FleetGrid = () => {
+  const { t } = useLanguage();
   const [filter, setFilter] = useState('All');
   const categories = ['All', 'Economy', 'Citadine'];
 
@@ -12,7 +14,7 @@ const FleetGrid = () => {
     : fleetData.filter(car => car.category === filter);
 
   return (
-    <section id="fleet" className="py-24 bg-warmDark relative">
+    <section id="fleet" className="py-24 bg-warmBeige dark:bg-warmDark relative transition-colors duration-300">
       <div className="container mx-auto px-6">
         
         {/* Section Header */}
@@ -23,15 +25,15 @@ const FleetGrid = () => {
             transition={{ duration: 0.6 }}
             className="text-gold text-lg uppercase tracking-widest font-medium mb-2"
           >
-            Our Fleet
+            {t('fleet.subtitle')}
           </motion.h3>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-serif text-white/90"
+            className="text-4xl md:text-5xl font-serif text-warmDark dark:text-white/90"
           >
-            Premium Vehicles
+            {t('fleet.title')}
           </motion.h2>
         </div>
 
@@ -52,7 +54,7 @@ const FleetGrid = () => {
                   : 'bg-transparent text-gold hover:bg-gold/10'
               }`}
             >
-              {cat}
+              {cat === 'All' ? t('fleet.all') : t('booking.' + cat.toLowerCase())}
             </button>
           ))}
         </motion.div>

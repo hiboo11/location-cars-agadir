@@ -1,10 +1,10 @@
 export const handleWhatsApp = (carName, pickupDate = '', pickupLocation = '') => {
   const phoneNumber = "212667757625"; // Updated business number
   
-  let message = `Hello, I want to book the ${carName}.`;
+  let message = `Bonjour Lours Cars, je souhaite réserver une voiture ${carName}.`;
   
   if (pickupDate) {
-    message += `\nPickup Date: ${pickupDate}`;
+    message += `\nDate de prise: ${pickupDate}`;
   }
   
   if (pickupLocation) {

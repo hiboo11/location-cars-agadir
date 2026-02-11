@@ -17,7 +17,7 @@ export const fleetData = [
     price: 350,
     specs: {
       passengers: 5,
-      transmission: "Manual",
+      transmission: "Manuelle",
       fuel: "Diesel"
     }
   },
@@ -26,10 +26,10 @@ export const fleetData = [
     name: "Renault Clio 5 Black Edition",
     category: "Citadine",
     image: clioBlack,
-    price: 400,
+    price: 450,
     specs: {
       passengers: 5,
-      transmission: "Manual",
+      transmission: "Manuelle",
       fuel: "Diesel"
     }
   },
@@ -38,10 +38,10 @@ export const fleetData = [
     name: "Peugeot 208 Gris Allure",
     category: "Citadine",
     image: peugeot208,
-    price: 450,
+    price: 400,
     specs: {
       passengers: 5,
-      transmission: "Manual",
+      transmission: "Manuelle",
       fuel: "Diesel"
     }
   },
@@ -53,7 +53,7 @@ export const fleetData = [
     price: 300,
     specs: {
       passengers: 5,
-      transmission: "Manual",
+      transmission: "Manuelle",
       fuel: "Diesel"
     }
   }
@@ -63,26 +63,26 @@ export const fleetData = [
 export const servicesData = [
   {
     id: 1,
-    title: "Premium Insurance",
-    description: "Full coverage for peace of mind during your premium driving experience.",
+    title: "Assurance Tous Risques",
+    description: "Une couverture complète pour votre tranquillité d'esprit.",
     icon: MdVerifiedUser
   },
   {
     id: 2,
-    title: "24/7 VIP Support",
-    description: "Dedicated concierge service available at any time of day or night.",
+    title: "Support VIP 24/7",
+    description: "Service de conciergerie dédié disponible jour et nuit.",
     icon: MdOutlineSupportAgent
   },
   {
     id: 3,
-    title: "Airport Transfer",
-    description: "Seamless pickup and drop-off services at all major airports.",
+    title: "Transfert Aéroport",
+    description: "Prise en charge et retour fluides à l'aéroport.",
     icon: MdAirplanemodeActive
   },
   {
     id: 4,
-    title: "Flexible Pricing",
-    description: "Competitive daily, weekly, and monthly rates tailored to your needs.",
+    title: "Tarifs Flexibles",
+    description: "Tarifs compétitifs à la journée ou à la semaine adaptés à vos besoins.",
     icon: MdPriceCheck
   }
 ];
@@ -91,25 +91,25 @@ export const servicesData = [
 export const testimonialsData = [
   {
     id: 1,
-    name: "James Anderson",
-    role: "Business Executive",
-    content: "The S-Class was in pristine condition. The service was impeccable from start to finish. Highly recommended for business travel.",
+    name: "Karim Bennani",
+    role: "Chef d'entreprise",
+    content: "La voiture était dans un état impeccable. Service irréprochable. Hautement recommandé pour les voyages d'affaires.",
     rating: 5,
     avatar: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
     id: 2,
-    name: "Sarah Jenkins",
-    role: "Travel Lifestyle Blogger",
-    content: "Absolutely stunning fleet! The Range Rover made our trip to the Atlas Mountains unforgettable. The booking process was so smooth.",
+    name: "Sarah Alami",
+    role: "Touriste",
+    content: "Une flotte absolument magnifique ! Le voyage vers les montagnes de l'Atlas était inoubliable.",
     rating: 5,
     avatar: "https://randomuser.me/api/portraits/women/44.jpg"
   },
   {
     id: 3,
-    name: "Mohammed Al-Fayed",
+    name: "Mohammed El Fassi",
     role: "Entrepreneur",
-    content: "Professionalism at its best. The car was delivered exactly on time and the chauffeur service was top-notch.",
+    content: "Le professionnalisme à son meilleur. La voiture a été livrée exactement à l'heure.",
     rating: 5,
     avatar: "https://randomuser.me/api/portraits/men/67.jpg"
   }

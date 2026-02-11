@@ -1,83 +1,65 @@
 import { FaStar, FaCarSide, FaCogs, FaGasPump } from 'react-icons/fa';
 import { MdVerifiedUser, MdOutlineSupportAgent, MdAirplanemodeActive, MdPriceCheck } from 'react-icons/md';
 
+// Import Local Images
+import daciaStepway from '../assets/dacia sandero grey.webp';
+import clioBlack from '../assets/clio black.jpg';
+import peugeot208 from '../assets/gris.avif';
+import daciaSandero from '../assets/dacia sandero white.webp';
+
 // Fleet Data
 export const fleetData = [
   {
     id: 1,
-    name: "Mercedes-Benz S-Class",
-    category: "Luxury",
-    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1000&auto=format&fit=crop",
-    price: 250,
+    name: "Dacia Sandero Stepway",
+    category: "Economy",
+    image: daciaStepway,
+    price: 30,
     specs: {
       passengers: 5,
-      transmission: "Auto",
-      fuel: "Petrol"
+      transmission: "Manual",
+      fuel: "Diesel"
     }
   },
   {
     id: 2,
-    name: "Range Rover Vogue",
-    category: "Luxury",
-    image: "https://images.unsplash.com/photo-1606152421811-aa9116c925d4?q=80&w=1000&auto=format&fit=crop",
-    price: 300,
+    name: "Renault Clio 5 Black Edition",
+    category: "Citadine",
+    image: clioBlack,
+    price: 40,
     specs: {
       passengers: 5,
-      transmission: "Auto",
+      transmission: "Manual",
       fuel: "Diesel"
     }
   },
   {
     id: 3,
-    name: "BMW 5 Series",
-    category: "Business",
-    image: "https://images.unsplash.com/photo-1555215695-3004980adade?q=80&w=1000&auto=format&fit=crop",
-    price: 180,
+    name: "Peugeot 208 Gris Allure",
+    category: "Citadine",
+    image: peugeot208,
+    price: 45,
     specs: {
       passengers: 5,
-      transmission: "Auto",
+      transmission: "Manual",
       fuel: "Diesel"
     }
   },
   {
     id: 4,
-    name: "Audi A6",
-    category: "Business",
-    image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1000&auto=format&fit=crop",
-    price: 170,
+    name: "Dacia Sandero",
+    category: "Economy",
+    image: daciaSandero,
+    price: 30,
     specs: {
       passengers: 5,
-      transmission: "Auto",
+      transmission: "Manual",
       fuel: "Diesel"
-    }
-  },
-  {
-    id: 5,
-    name: "Mercedes V-Class",
-    category: "Van",
-    image: "https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?q=80&w=1000&auto=format&fit=crop",
-    price: 220,
-    specs: {
-      passengers: 7,
-      transmission: "Auto",
-      fuel: "Diesel"
-    }
-  },
-  {
-    id: 6,
-    name: "Porsche Panamera",
-    category: "Luxury",
-    image: "https://images.unsplash.com/photo-1503376763036-066120622c74?q=80&w=1000&auto=format&fit=crop",
-    price: 400,
-    specs: {
-      passengers: 4,
-      transmission: "Auto",
-      fuel: "Petrol"
     }
   }
 ];
 
-// Services Data
+// Services Data (Unchanged)
 export const servicesData = [
   {
     id: 1,
@@ -105,7 +87,7 @@ export const servicesData = [
   }
 ];
 
-// Testimonials Data
+// Testimonials Data (Unchanged)
 export const testimonialsData = [
   {
     id: 1,

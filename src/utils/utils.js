@@ -8,7 +8,7 @@
 export const handleWhatsApp = (carName, pickupDate = '', pickupLocation = '') => {
   const phoneNumber = "212600000000"; // REPLACE WITH ACTUAL PHONE NUMBER
   
-  let message = `Hello, I am interested in booking the *${carName}*.`;
+  let message = `Hello, I want to book the ${carName}.`;
   
   if (pickupDate) {
     message += `\nPickup Date: ${pickupDate}`;

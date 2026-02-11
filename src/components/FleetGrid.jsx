@@ -5,7 +5,7 @@ import { fleetData } from '../data/data';
 
 const FleetGrid = () => {
   const [filter, setFilter] = useState('All');
-  const categories = ['All', 'Luxury', 'Business', 'Van'];
+  const categories = ['All', 'Economy', 'Citadine'];
 
   const filteredCars = filter === 'All' 
     ? fleetData 
@@ -23,7 +23,7 @@ const FleetGrid = () => {
             transition={{ duration: 0.6 }}
             className="text-gold text-lg uppercase tracking-widest font-medium mb-2"
           >
-            Premium Collection
+            Our Fleet
           </motion.h3>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const FleetGrid = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl font-serif text-white/90"
           >
-            Choose Your Ride
+            Premium Vehicles
           </motion.h2>
         </div>
 
@@ -62,7 +62,7 @@ const FleetGrid = () => {
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {filteredCars.map((car) => (
               <CarCard key={car.id} car={car} />
             ))}

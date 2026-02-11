@@ -14,7 +14,7 @@ export const fleetData = [
     name: "Dacia Sandero Stepway",
     category: "Economy",
     image: daciaStepway,
-    price: 30,
+    price: 350,
     specs: {
       passengers: 5,
       transmission: "Manual",
@@ -26,7 +26,7 @@ export const fleetData = [
     name: "Renault Clio 5 Black Edition",
     category: "Citadine",
     image: clioBlack,
-    price: 40,
+    price: 400,
     specs: {
       passengers: 5,
       transmission: "Manual",
@@ -38,7 +38,7 @@ export const fleetData = [
     name: "Peugeot 208 Gris Allure",
     category: "Citadine",
     image: peugeot208,
-    price: 45,
+    price: 450,
     specs: {
       passengers: 5,
       transmission: "Manual",
@@ -50,7 +50,7 @@ export const fleetData = [
     name: "Dacia Sandero",
     category: "Economy",
     image: daciaSandero,
-    price: 30,
+    price: 300,
     specs: {
       passengers: 5,
       transmission: "Manual",

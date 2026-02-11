@@ -1,12 +1,5 @@
-/**
- * Generates a WhatsApp URL for booking a specific car.
- * @param {string} carName - The name of the car to book.
- * @param {string} date - Optional date string.
- * @param {string} location - Optional location string.
- * @returns {void} - Redirects to WhatsApp.
- */
 export const handleWhatsApp = (carName, pickupDate = '', pickupLocation = '') => {
-  const phoneNumber = "212600000000"; // REPLACE WITH ACTUAL PHONE NUMBER
+  const phoneNumber = "212667757625"; // Updated business number
   
   let message = `Hello, I want to book the ${carName}.`;
   
@@ -25,9 +18,5 @@ export const handleWhatsApp = (carName, pickupDate = '', pickupLocation = '') =>
 };
 
 export const formatPrice = (price) => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
-  }).format(price);
+  return `${price} DH`;
 };

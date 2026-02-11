@@ -55,7 +55,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="https://wa.me/212600000000"
+            href="https://wa.me/212667757625"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2 border border-gold text-gold hover:bg-gold hover:text-warmDark transition-all duration-300 rounded-full font-medium text-sm uppercase tracking-wide"
@@ -95,7 +95,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="https://wa.me/212600000000"
+                href="https://wa.me/212667757625"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-gold text-warmDark font-bold rounded-lg mt-4"
                 onClick={() => setIsOpen(false)}
               >

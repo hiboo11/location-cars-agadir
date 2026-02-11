@@ -76,10 +76,9 @@ const BookingBar = () => {
               className="w-full bg-black/30 text-white pl-10 pr-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all appearance-none cursor-pointer"
             >
               <option value="" className="bg-warmDark">Choose a Car Class</option>
-              <option value="Luxury Sedan" className="bg-warmDark">Luxury Sedan</option>
-              <option value="SUV" className="bg-warmDark">Premium SUV</option>
-              <option value="Sporstcar" className="bg-warmDark">Sports Car</option>
-              <option value="Van" className="bg-warmDark">Luxury Van</option>
+              <option value="Economy" className="bg-warmDark">Economy</option>
+              <option value="Citadine" className="bg-warmDark">Citadine</option>
+              <option value="All" className="bg-warmDark">All Categories</option>
             </select>
           </div>
         </div>

@@ -13,21 +13,21 @@ import BookingBar from './BookingBar';
 const slides = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1503376763036-066120622c74?q=80&w=2000&auto=format&fit=crop',
-    title: 'Experience the Extraordinary',
-    subtitle: 'Premium Car Rental Services in Agadir'
+    image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2000&auto=format&fit=crop', // S-Class
+    title: 'VIP Transfers Agadir',
+    subtitle: 'Luxury Chauffeur Services'
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2000&auto=format&fit=crop',
-    title: 'Drive Your Dreams',
-    subtitle: 'Luxury Fleet at Your Fingertips'
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2000&auto=format&fit=crop', // Luxury Interior
+    title: 'Comfort & Elegance',
+    subtitle: 'Premium Fleet for Your Journey'
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1563720223185-11003d5169ad?q=80&w=2000&auto=format&fit=crop',
-    title: 'Unmatched Comfort',
-    subtitle: 'Travel with Style and Elegance'
+    image: 'https://images.unsplash.com/photo-1563720223185-11003d5169ad?q=80&w=2000&auto=format&fit=crop', // Scenic
+    title: 'Explore Morocco',
+    subtitle: 'Experience Agadir in Style'
   }
 ];
 

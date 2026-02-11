@@ -56,15 +56,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-4">
                 <span className="text-gold mt-1">📍</span>
-                <span className="text-white/60">123 Marina Boulevard, Agadir, Morocco</span>
+                <span className="text-white/60">Hay Zitoun, Tikiouin, Agadir</span>
               </li>
               <li className="flex items-start gap-4">
                 <span className="text-gold mt-1">📞</span>
-                <span className="text-white/60">+212 600 000 000</span>
+                <span className="text-white/60">+212 667 757 625</span>
               </li>
               <li className="flex items-start gap-4">
                 <span className="text-gold mt-1">✉️</span>
-                <span className="text-white/60">booking@luxecars-agadir.com</span>
+                <span className="text-white/60">hibasedra72@gmail.com</span>
               </li>
             </ul>
           </div>

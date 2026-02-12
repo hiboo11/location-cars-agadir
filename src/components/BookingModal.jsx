@@ -95,13 +95,14 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
         return;
     }
 
-    if (validateAge(formData.dob) && (scanResult === 'success' || scanResult === null)) { 
-      // Block if explicit OCR error
-      if (scanResult === 'error') {
-         setError(t('bookingModal.invalidId'));
-         return;
-      }
-      
+    if (validateAge(formData.dob)) {
+       // Allow success, null (no file? but file is required here), or warning (OCR failed/timeout)
+       // Strictly block only if explicitly 'error' (keywords checked and not found)
+       if (scanResult === 'error') {
+          setError(t('bookingModal.invalidId'));
+          return;
+       }
+
       setIsUploading(true);
       setError('');
 
@@ -123,14 +124,7 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
       } catch (err) {
         console.error("Upload failed", err);
         setError(t('bookingModal.uploadError'));
-        // Fallback: send without URL if upload fails? Or block?
-        // User said: "Generate a WhatsApp message that includes... DIRECT LINK". So blocking seems appropriate or fallback to "Attached".
-        // Let's block and ask to try again implies reliability. 
-        // But for demo with bad API key, this will fail.
-        // I'll add a note in utils.js or fallback there? 
-        // I already added throw in utils.js.
-        // Let's try to continue gracefully if upload fails? No, requirement 2 is strict.
-        alert("Upload failed. Please check API Key or try again."); 
+        alert("Upload failed. Please check your internet connection."); 
       } finally {
         setIsUploading(false);
       }

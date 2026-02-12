@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaUser, FaCogs, FaGasPump, FaWhatsapp } from 'react-icons/fa';
-import { handleWhatsApp, formatPrice } from '../utils/utils';
+import { FaWhatsapp } from 'react-icons/fa';
+import { User, Settings, Fuel } from 'lucide-react';
+import { formatPrice } from '../utils/utils';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useBooking } from '../contexts/BookingContext';
 
 const CarCard = ({ car }) => {
   const { t } = useLanguage();
+  const { openBooking } = useBooking();
 
   return (
     <motion.div
@@ -41,22 +44,22 @@ const CarCard = ({ car }) => {
         {/* Specs Grid */}
         <div className="grid grid-cols-3 gap-2 mb-6 border-t border-warmDark/10 dark:border-white/10 pt-4">
           <div className="flex flex-col items-center text-center">
-            <FaUser className="text-gold mb-1" size={14} />
+            <User className="text-gold mb-1" size={16} />
             <span className="text-sm font-sans text-warmDark/80 dark:text-white/80">{car.specs.passengers} {t('fleet.seats')}</span>
           </div>
           <div className="flex flex-col items-center text-center">
-            <FaCogs className="text-gold mb-1" size={14} />
+            <Settings className="text-gold mb-1" size={16} />
             <span className="text-sm font-sans text-warmDark/80 dark:text-white/80">{car.specs.transmission}</span>
           </div>
           <div className="flex flex-col items-center text-center">
-            <FaGasPump className="text-gold mb-1" size={14} />
+            <Fuel className="text-gold mb-1" size={16} />
             <span className="text-sm font-sans text-warmDark/80 dark:text-white/80">{car.specs.fuel}</span>
           </div>
         </div>
 
         {/* Action Button */}
         <button
-          onClick={() => handleWhatsApp(car.name)}
+          onClick={() => openBooking({ carType: car.name })}
           className="w-full flex items-center justify-center gap-2 bg-warmDark dark:bg-warmBeige text-warmLight dark:text-warmDark py-3 rounded-xl font-bold tracking-wide hover:bg-gold hover:text-warmDark dark:hover:bg-gold dark:hover:text-warmDark transition-all duration-300 shadow-md hover:shadow-lg"
         >
           <FaWhatsapp size={20} />

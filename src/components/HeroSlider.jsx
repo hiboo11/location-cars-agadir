@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useBooking } from '../contexts/BookingContext';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -13,6 +14,7 @@ import BookingBar from './BookingBar';
 
 const HeroSlider = () => {
   const { t } = useLanguage();
+  const { openBooking } = useBooking();
 
   const slides = [
     {
@@ -93,7 +95,7 @@ const HeroSlider = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 1, duration: 0.8 }}
                   className="px-8 py-3 bg-gold text-warmDark font-bold text-lg rounded-full hover:bg-white transition-colors duration-300"
-                  onClick={() => document.getElementById('fleet').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => openBooking()}
                 >
                   {t('fleet.bookNow')}
                 </motion.button>

@@ -2,6 +2,7 @@ export const translations = {
   en: {
     navbar: {
       home: "Home",
+      about: "About Us",
       fleet: "Our Fleet",
       services: "Services",
       reviews: "Reviews",
@@ -27,6 +28,20 @@ export const translations = {
       all: "All Categories",
       bookBtn: "Book Now"
     },
+    bookingModal: {
+      title: "Complete Your Booking",
+      fullName: "Full Name",
+      dob: "Date of Birth",
+      idScan: "ID Scan / CIN",
+      uploadText: "Click to upload or drag and drop",
+      underAgeError: "You must be at least 18 years old to book",
+      submit: "Submit Request",
+      cancel: "Cancel",
+      scanning: "Scanning ID...",
+      invalidId: "Invalid document. Please upload a clear scan of your ID/CIN.",
+      scanSuccess: "ID Verified Successfully"
+    },
+
     fleet: {
       subtitle: "Our Fleet",
       title: "Our Vehicles",
@@ -74,6 +89,7 @@ export const translations = {
   fr: {
     navbar: {
       home: "Accueil",
+      about: "À Propos",
       fleet: "Notre Flotte",
       services: "Services",
       reviews: "Avis",
@@ -98,6 +114,19 @@ export const translations = {
       citadine: "Citadine",
       all: "Toutes les catégories",
       bookBtn: "Réserver"
+    },
+    bookingModal: {
+      title: "Finalisez votre réservation",
+      fullName: "Nom Complet",
+      dob: "Date de Naissance",
+      idScan: "Scan ID / CIN",
+      uploadText: "Cliquez pour télécharger ou glissez-déposez",
+      underAgeError: "Vous devez avoir au moins 18 ans pour réserver",
+      submit: "Confirmer la Réservation",
+      cancel: "Annuler",
+      scanning: "Analyse en cours...",
+      invalidId: "Document non valide. Veuillez uploader un scan clair de votre CIN/Passeport.",
+      scanSuccess: "Identité vérifiée avec succès"
     },
     fleet: {
       subtitle: "Notre Flotte",

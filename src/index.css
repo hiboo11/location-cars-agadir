@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  background-color: #1A1714;
+  --color-primary: #1A1714; /* Deep Charcoal */
+  --color-secondary: #F5F1E9; /* Warm Beige */
+  --color-accent: #D4AF37; /* Champagne Gold */
+  
+  background-color: var(--color-primary);
   color: #E8E4D9;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MdVerifiedUser, MdOutlineSupportAgent, MdAirplanemodeActive, MdPriceCheck } from 'react-icons/md';
+import { ShieldCheck, Headphones, Plane, Banknote } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const ServicesSection = () => {
@@ -11,25 +11,25 @@ const ServicesSection = () => {
       id: 1,
       title: t('services.insurance.title'),
       description: t('services.insurance.desc'),
-      icon: MdVerifiedUser
+      icon: ShieldCheck
     },
     {
       id: 2,
       title: t('services.support.title'),
       description: t('services.support.desc'),
-      icon: MdOutlineSupportAgent
+      icon: Headphones
     },
     {
       id: 3,
       title: t('services.transfer.title'),
       description: t('services.transfer.desc'),
-      icon: MdAirplanemodeActive
+      icon: Plane
     },
     {
       id: 4,
       title: t('services.pricing.title'),
       description: t('services.pricing.desc'),
-      icon: MdPriceCheck
+      icon: Banknote
     }
   ];
 

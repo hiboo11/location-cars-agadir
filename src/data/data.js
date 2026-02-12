@@ -44,18 +44,6 @@ export const fleetData = [
       transmission: "Manuelle",
       fuel: "Diesel"
     }
-  },
-  {
-    id: 4,
-    name: "Dacia Sandero",
-    category: "Economy",
-    image: daciaSandero,
-    price: 300,
-    specs: {
-      passengers: 5,
-      transmission: "Manuelle",
-      fuel: "Diesel"
-    }
   }
 ];
 

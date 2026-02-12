@@ -70,6 +70,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
         </div>
 
         {/* Map Section */}

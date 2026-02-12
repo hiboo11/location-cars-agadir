@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaMapMarkerAlt, FaCar } from 'react-icons/fa';
-import { handleWhatsApp } from '../utils/utils';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useBooking } from '../contexts/BookingContext';
 
 const BookingBar = () => {
   const { t } = useLanguage();
+  const { openBooking } = useBooking();
   const [formData, setFormData] = useState({
     pickupLocation: '',
     pickupDate: '',
@@ -16,9 +17,9 @@ const BookingBar = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleBarSubmit = (e) => {
     e.preventDefault();
-    handleWhatsApp(formData.carType || "Luxury Car", formData.pickupDate, formData.pickupLocation);
+    openBooking(formData);
   };
 
   return (
@@ -28,7 +29,7 @@ const BookingBar = () => {
       transition={{ delay: 1.2, duration: 0.8 }}
       className="w-full max-w-5xl bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl"
     >
-      <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 items-center">
+      <form onSubmit={handleBarSubmit} className="flex flex-col md:flex-row gap-4 items-center">
         
         {/* Location Input */}
         <div className="w-full md:w-1/4 relative group">

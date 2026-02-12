@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes, FaCloudUploadAlt, FaCalendarAlt, FaUser, FaIdCard, FaSpinner, FaCheckCircle } from 'react-icons/fa';
 import Tesseract from 'tesseract.js';
 import { useLanguage } from '../contexts/LanguageContext';
-import { sendBookingDetails } from '../utils/utils';
+import { sendBookingDetails, uploadImageToImgBB } from '../utils/utils';
 
 const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
   const { t } = useLanguage();
@@ -14,6 +14,7 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
   });
   const [error, setError] = useState('');
   const [isScanning, setIsScanning] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [scanResult, setScanResult] = useState(null); // 'success' or 'error'
 
   const handleInputChange = (e) => {
@@ -33,12 +34,10 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
     try {
       const result = await Tesseract.recognize(
         file,
-        'fra', // Use French language model
-        // { logger: m => console.log(m) } // Optional logger
+        'fra', 
       );
 
       const text = result.data.text.toUpperCase();
-      // Basic keywords to identify a Moroccan ID or similar ID cards
       const keywords = ['CARTE NATIONALE', 'ROYAUME DU MAROC', 'IDENTITY CARD', 'CIN', 'PRENOM', 'NOM', 'PASS'];
       
       const isValid = keywords.some(keyword => text.includes(keyword));
@@ -48,11 +47,13 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
       } else {
         setScanResult('error');
         setError(t('bookingModal.invalidId'));
-        // Optional: still allow submission but warn user? For now strict.
-        // setFormData(prev => ({ ...prev, idFile: null })); // Reset file if invalid?
       }
     } catch (err) {
       console.error("OCR Error:", err);
+      // Don't block strictly on OCR error, maybe just warn? 
+      // User asked for validation, but upload flow prioritizes the file being present.
+      // Let's stick to showing error state but maybe still allowing if user insists? 
+      // Current logic blocks.
       setError(t('bookingModal.invalidId'));
       setScanResult('error');
     } finally {
@@ -64,7 +65,6 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
     const file = e.target.files[0];
     if (file) {
       setFormData(prev => ({ ...prev, idFile: file }));
-      // Trigger validation
       validateIdCard(file);
     }
   };
@@ -83,33 +83,57 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
       setError(t('bookingModal.underAgeError'));
       return false;
     } else {
-      // Clear error only if it's the age error
       if (error === t('bookingModal.underAgeError')) setError('');
       return true;
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateAge(formData.dob) && (!formData.idFile || scanResult === 'success' || scanResult === null)) { 
-      // Note: Allowing null scanResult if user didn't upload or OCR failed but we want to let them pass? 
-      // User requested "If these keywords aren't found, show an error". So we should block unless valid.
-      // But let's be robust: if file exists and result is ERROR, block. If file doesn't exist (optional?), pass.
-      // Assuming ID is optional in form logic but required by user request "ID Scan / CIN (File upload - styled clearly)".
-      // Let's assume input is NOT required by HTML attribute, but Logic requires validation IF uploaded.
-      
-      if (formData.idFile && scanResult === 'error') {
+    if (!formData.idFile) {
+        setError(t('bookingModal.invalidId')); // Ensure file is present
+        return;
+    }
+
+    if (validateAge(formData.dob) && (scanResult === 'success' || scanResult === null)) { 
+      // Block if explicit OCR error
+      if (scanResult === 'error') {
          setError(t('bookingModal.invalidId'));
          return;
       }
       
-      sendBookingDetails({ ...prefilledData, ...formData });
-      
-      // Reset Form
-      setFormData({ fullName: '', dob: '', idFile: null });
-      setScanResult(null);
+      setIsUploading(true);
       setError('');
-      onClose();
+
+      try {
+        let idUrl = '';
+        if (formData.idFile) {
+            idUrl = await uploadImageToImgBB(formData.idFile);
+        }
+        
+        sendBookingDetails({ ...prefilledData, ...formData, idUrl });
+        alert(t('bookingModal.successMessage'));
+
+        // Reset
+        setFormData({ fullName: '', dob: '', idFile: null });
+        setScanResult(null);
+        setError('');
+        onClose();
+
+      } catch (err) {
+        console.error("Upload failed", err);
+        setError(t('bookingModal.uploadError'));
+        // Fallback: send without URL if upload fails? Or block?
+        // User said: "Generate a WhatsApp message that includes... DIRECT LINK". So blocking seems appropriate or fallback to "Attached".
+        // Let's block and ask to try again implies reliability. 
+        // But for demo with bad API key, this will fail.
+        // I'll add a note in utils.js or fallback there? 
+        // I already added throw in utils.js.
+        // Let's try to continue gracefully if upload fails? No, requirement 2 is strict.
+        alert("Upload failed. Please check API Key or try again."); 
+      } finally {
+        setIsUploading(false);
+      }
     }
   };
 
@@ -159,7 +183,7 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
                     type="text"
                     name="fullName"
                     required
-                    autoComplete="new-password" // Hack to disable autocomplete often
+                    autoComplete="new-password"
                     value={formData.fullName}
                     onChange={handleInputChange}
                     className="w-full bg-neutral-100 dark:bg-neutral-800 border-none rounded-xl py-3 pl-12 pr-4 text-neutral-900 dark:text-white focus:ring-2 focus:ring-gold/50 transition-all placeholder-neutral-400"
@@ -195,7 +219,7 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
                   <input
                     type="file"
                     id="id-upload"
-                    accept="image/*" // Limiting to images for OCR
+                    accept="image/*"
                     onChange={handleFileChange}
                     className="hidden"
                   />
@@ -246,9 +270,9 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={!!error || !formData.dob || isScanning || (formData.idFile && scanResult === 'error')}
+                disabled={!!error || !formData.dob || isScanning || isUploading || (formData.idFile && scanResult === 'error')}
                 className={`w-full py-4 rounded-xl font-bold uppercase tracking-widest transition-all transform flex items-center justify-center gap-2 ${
-                  error || !formData.dob || isScanning || (formData.idFile && scanResult === 'error')
+                  error || !formData.dob || isScanning || isUploading || (formData.idFile && scanResult === 'error')
                     ? 'bg-neutral-300 dark:bg-neutral-700 text-neutral-500 cursor-not-allowed'
                     : 'bg-gold text-neutral-900 hover:scale-[1.02] shadow-lg shadow-gold/20'
                 }`}
@@ -256,6 +280,10 @@ const BookingModal = ({ isOpen, onClose, prefilledData = {} }) => {
                 {isScanning ? (
                     <>
                        <FaSpinner className="animate-spin" /> {t('bookingModal.scanning')}
+                    </>
+                ) : isUploading ? (
+                    <>
+                       <FaSpinner className="animate-spin" /> {t('bookingModal.uploading')}
                     </>
                 ) : (
                     t('bookingModal.submit')

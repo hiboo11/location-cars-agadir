@@ -38,6 +38,9 @@ export const translations = {
       submit: "Submit Request",
       cancel: "Cancel",
       scanning: "Scanning ID...",
+      uploading: "Uploading ID...",
+      uploadError: "Error uploading image. Please try again.",
+      successMessage: "Information sent! Please send the WhatsApp message that just opened.",
       invalidId: "Invalid document. Please upload a clear scan of your ID/CIN.",
       scanSuccess: "ID Verified Successfully"
     },
@@ -125,6 +128,9 @@ export const translations = {
       submit: "Confirmer la Réservation",
       cancel: "Annuler",
       scanning: "Analyse en cours...",
+      uploading: "Téléchargement de l'ID...",
+      uploadError: "Erreur lors du téléchargement. Veuillez réessayer.",
+      successMessage: "Informations envoyées ! Veuillez maintenant envoyer le message WhatsApp qui vient de s'ouvrir.",
       invalidId: "Document non valide. Veuillez uploader un scan clair de votre CIN/Passeport.",
       scanSuccess: "Identité vérifiée avec succès"
     },

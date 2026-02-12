@@ -21,7 +21,7 @@ body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   /* Custom Cursor: Car Icon (32x32) */
-  cursor: url('https://img.icons8.com/color/32/car--v1.png'), auto;
+  cursor: url('https://icons8.com/icon/1shL3zu3AjU9/sports-car'), auto;
 }
 
 /* Ensure interactive elements revert to pointer */

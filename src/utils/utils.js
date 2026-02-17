@@ -1,7 +1,7 @@
 export const handleWhatsApp = (carName, pickupDate = '', pickupLocation = '') => {
   const phoneNumber = "212667757625"; // Updated business number
   
-  let message = `Bonjour Lours Cars, je souhaite réserver une voiture ${carName}.`;
+  let message = `Bonjour ORIENTAL-TOURS, je souhaite réserver une voiture ${carName}.`;
   
   if (pickupDate) {
     message += `\nDate de prise: ${pickupDate}`;
@@ -18,7 +18,7 @@ export const handleWhatsApp = (carName, pickupDate = '', pickupLocation = '') =>
 
 export const sendBookingDetails = (data) => {
   const phoneNumber = "212667757625";
-  let message = `*Nouvelle Réservation Lours Cars*\n\n`;
+  let message = `*Nouvelle Réservation ORIENTAL-TOURS*\n\n`;
   
   if (data.fullName) message += `👤 Nom: ${data.fullName}\n`;
   if (data.dob) message += `🎂 Né(e) le: ${data.dob}\n`;

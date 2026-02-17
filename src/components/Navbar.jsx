@@ -6,6 +6,8 @@ import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useBooking } from '../contexts/BookingContext';
 
+
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -44,8 +46,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className={`text-2xl font-serif font-bold tracking-wide ${textColor}`}>
-          Lours Cars
+        <a href="#" className={`flex items-center gap-3 text-2xl font-serif font-bold tracking-wide ${textColor}`}>
+          <span className="inline">ORIENTAL-TOURS</span>
         </a>
 
         {/* Desktop Menu */}
@@ -118,7 +120,7 @@ const Navbar = () => {
               
               <div className="flex justify-between items-center py-4 border-t border-warmDark/10 dark:border-white/10 mt-2">
                 <button 
-                  onClick={toggleLanguage}
+                   onClick={toggleLanguage}
                   className="flex items-center gap-2 text-warmDark dark:text-warmLight font-bold uppercase"
                 >
                   <Globe size={16} /> {language === 'en' ? 'English' : 'Français'}

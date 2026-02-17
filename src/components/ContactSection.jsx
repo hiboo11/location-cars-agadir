@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { QRCodeSVG } from 'qrcode.react';
+import whatsappQR from '../assets/whatsapp number.svg';
 import { Phone, Mail, MapPin, Download, Share2 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -12,16 +12,16 @@ const ContactSection = () => {
     phone: "+212667757625",
     displayPhone: "+212 667 757 625",
     email: "hibasedra72@gmail.com",
-    address: "Hay Zitoun, Tikiouin, Agadir",
-    website: "https://lours-cars.com" // Replace with actual URL
+    address: "Hay Zitoun, Tilila, Agadir",
+    website: "https://oriental-tours.com" // Update when available
   };
 
   // vCard Generator
   const generateVCard = () => {
     const vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Lours Cars
-ORG:Lours Cars Agadir
+FN:ORIENTAL-TOURS
+ORG:ORIENTAL-TOURS Agadir
 TEL;TYPE=WORK,VOICE:${contactInfo.phone}
 EMAIL:${contactInfo.email}
 ADR;TYPE=WORK:;;${contactInfo.address}
@@ -32,7 +32,7 @@ END:VCARD`;
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', 'LoursCars.vcf');
+    link.setAttribute('download', 'OrientalTours.vcf');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -115,12 +115,11 @@ END:VCARD`;
             viewport={{ once: true }}
             className="flex flex-col items-center justify-center bg-[#F5F1E9]/5 p-8 rounded-2xl border border-[#F5F1E9]/10 backdrop-blur-sm"
           >
-            <div className="bg-white p-4 rounded-xl mb-4">
-              <QRCodeSVG 
-                value={contactInfo.website} 
-                size={200}
-                level="H"
-                includeMargin={true}
+            <div className="bg-white p-2 rounded-xl mb-4 overflow-hidden">
+              <img 
+                src={whatsappQR} 
+                alt="WhatsApp QR Code" 
+                className="w-[200px] h-[200px] object-contain"
               />
             </div>
             <p className="text-[#F5F1E9]/60 font-inter flex items-center gap-2">

@@ -10,8 +10,8 @@ export const translations = {
       bookNow: "Book Now"
     },
     hero: {
-      title1: "Lours Cars Agadir",
-      subtitle1: "Car Rental & VIP Transfers in Tikiouin",
+      title1: "ORIENTAL-TOURS",
+      subtitle1: "Car Rental & VIP Transfers in Tilila",
       title2: "Quality & Comfort",
       subtitle2: "Premium fleet for your journeys",
       title3: "Service Excellence",
@@ -68,7 +68,7 @@ export const translations = {
       title: "They Trust Us"
     },
     footer: {
-      brandDesc: "Discover automotive excellence in Agadir. We offer an exclusive fleet for your trips in Tikiouin and surroundings.",
+      brandDesc: "Discover automotive excellence with ORIENTAL-TOURS in Agadir. We offer an exclusive fleet for your trips in Tilila and surroundings.",
       quickLinks: "Quick Links",
       services: "Our Services",
       contact: "Contact Us",
@@ -100,8 +100,8 @@ export const translations = {
       bookNow: "Réserver"
     },
     hero: {
-      title1: "Lours Cars Agadir",
-      subtitle1: "Location de Voitures & Transferts VIP à Tikiouin",
+      title1: "ORIENTAL-TOURS",
+      subtitle1: "Location de Voitures & Transferts VIP à Tilila",
       title2: "Qualité & Confort",
       subtitle2: "Une flotte premium pour vos déplacements",
       title3: "Service Excellence",
@@ -157,7 +157,7 @@ export const translations = {
       title: "Ils nous font confiance"
     },
     footer: {
-      brandDesc: "Découvrez l'excellence automobile à Agadir. Nous proposons une flotte exclusive pour vos déplacements à Tikiouin et ses environs.",
+      brandDesc: "Découvrez l'excellence automobile avec ORIENTAL-TOURS à Agadir. Nous proposons une flotte exclusive pour vos déplacements à Tilila et ses environs.",
       quickLinks: "Liens Rapides",
       services: "Nos Services",
       contact: "Contactez-nous",

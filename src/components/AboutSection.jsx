@@ -8,9 +8,9 @@ const AboutSection = () => {
 
   const content = {
     en: {
-      title: "About Lours Cars",
+      title: "About ORIENTAL-TOURS",
       subtitle: "Excellence in Agadir",
-      description: "Lours Cars is your premier car rental agency in Agadir, specializing in VIP transfers and high-quality vehicle rentals. Located in the heart of Hay Zitoun, Tikiouin, we are dedicated to providing a seamless and luxurious travel experience.",
+      description: "ORIENTAL-TOURS is your premier car rental agency in Agadir, specializing in VIP transfers and high-quality vehicle rentals. Located in the heart of Hay Zitoun, Tilila, we are dedicated to providing a seamless and luxurious travel experience.",
       features: [
         { title: "Premium Fleet", description: "Meticulously maintained vehicles for your comfort.", icon: Shield },
         { title: "24/7 Availability", description: "Round-the-clock support for all your travel needs.", icon: Clock },
@@ -18,9 +18,9 @@ const AboutSection = () => {
       ]
     },
     fr: {
-      title: "À Propos de Lours Cars",
+      title: "À Propos de ORIENTAL-TOURS",
       subtitle: "L'Excellence à Agadir",
-      description: "Lours Cars s'impose comme votre agence de référence à Agadir pour la location de voitures et les transferts VIP. Situés au cœur de Hay Zitoun, Tikiouin, nous nous engageons à offrir une expérience de voyage fluide et prestigieuse. Que ce soit pour un transfert aéroportuaire ou une escapade touristique, notre priorité est votre confort et votre sécurité.",
+      description: "ORIENTAL-TOURS s'impose comme votre agence de référence à Agadir pour la location de voitures et les transferts VIP. Situés au cœur de Hay Zitoun, Tilila, nous nous engageons à offrir une expérience de voyage fluide et prestigieuse. Que ce soit pour un transfert aéroportuaire ou une escapade touristique, notre priorité est votre confort et votre sécurité.",
       features: [
         { title: "Flotte Premium", description: "Des véhicules méticuleusement entretenus pour votre confort absolu.", icon: Shield },
         { title: "Disponibilité 24/7", description: "Un support continu pour répondre à tous vos besoins de déplacement.", icon: Clock },

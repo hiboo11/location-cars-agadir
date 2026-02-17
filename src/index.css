@@ -13,22 +13,6 @@
   color: #E8E4D9;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-  /* Custom Cursor: Car Icon (32x32) */
-  cursor: url('https://icons8.com/icon/1shL3zu3AjU9/sports-car'), auto;
-}
-
-/* Ensure interactive elements revert to pointer */
-a, button, input[type="submit"], input[type="button"], label, select, .cursor-pointer {
-  cursor: pointer;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
 }

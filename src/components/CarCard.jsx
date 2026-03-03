@@ -17,7 +17,7 @@ const CarCard = ({ car }) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.3 }}
-      className="group relative bg-white dark:bg-white/5 backdrop-blur-md border border-warmDark/10 dark:border-white/10 rounded-2xl overflow-hidden hover:bg-gold/5 dark:hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 shadow-lg dark:shadow-none"
+      className="group relative bg-white dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden hover:bg-gold/5 dark:hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 shadow-lg dark:shadow-none">
     >
       {/* Image Container */}
       <div className="relative h-64 bg-transparent overflow-hidden flex items-center justify-center">
@@ -34,33 +34,33 @@ const CarCard = ({ car }) => {
       {/* Content */}
       <div className="p-6">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl md:text-2xl font-serif font-bold text-warmDark dark:text-white leading-tight">{car.name}</h3>
+          <h3 className="text-xl md:text-2xl font-serif font-bold text-gray-900 dark:text-white leading-tight">{car.name}</h3>
           <div className="text-right">
             <span className="block text-2xl font-bold text-gold">{formatPrice(car.price)}</span>
-            <span className="text-xs text-warmDark/60 dark:text-white/60 uppercase tracking-wide">{t('fleet.perDay')}</span>
+            <span className="text-xs text-gray-600 dark:text-white/60 uppercase tracking-wide">{t('fleet.perDay')}</span>
           </div>
         </div>
 
         {/* Specs Grid */}
-        <div className="grid grid-cols-3 gap-2 mb-6 border-t border-warmDark/10 dark:border-white/10 pt-4">
+        <div className="grid grid-cols-3 gap-2 mb-6 border-t border-gray-200 dark:border-white/10 pt-4">
           <div className="flex flex-col items-center text-center">
             <User className="text-gold mb-1" size={16} />
-            <span className="text-sm font-sans text-warmDark/80 dark:text-white/80">{car.specs.passengers} {t('fleet.seats')}</span>
+            <span className="text-sm font-sans text-gray-700 dark:text-white/80">{car.specs.passengers} {t('fleet.seats')}</span>
           </div>
           <div className="flex flex-col items-center text-center">
             <Settings className="text-gold mb-1" size={16} />
-            <span className="text-sm font-sans text-warmDark/80 dark:text-white/80">{car.specs.transmission}</span>
+            <span className="text-sm font-sans text-gray-700 dark:text-white/80">{car.specs.transmission}</span>
           </div>
           <div className="flex flex-col items-center text-center">
             <Fuel className="text-gold mb-1" size={16} />
-            <span className="text-sm font-sans text-warmDark/80 dark:text-white/80">{car.specs.fuel}</span>
+            <span className="text-sm font-sans text-gray-700 dark:text-white/80">{car.specs.fuel}</span>
           </div>
         </div>
 
         {/* Action Button */}
         <button
           onClick={() => openBooking({ carType: car.name })}
-          className="w-full flex items-center justify-center gap-2 bg-warmDark dark:bg-warmBeige text-warmLight dark:text-warmDark py-3 rounded-xl font-bold tracking-wide hover:bg-gold hover:text-warmDark dark:hover:bg-gold dark:hover:text-warmDark transition-all duration-300 shadow-md hover:shadow-lg"
+          className="w-full flex items-center justify-center gap-2 bg-gray-900 dark:bg-warmBeige text-white dark:text-warmDark py-3 rounded-xl font-bold tracking-wide hover:bg-gold hover:text-gray-900 dark:hover:text-warmDark transition-all duration-300 shadow-md hover:shadow-lg">
         >
           <FaWhatsapp size={20} />
           {t('fleet.bookNow')}

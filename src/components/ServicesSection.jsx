@@ -69,7 +69,7 @@ const ServicesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-serif text-warmDark dark:text-white/90"
+            className="text-4xl md:text-5xl font-serif text-gray-900 dark:text-white/90">
           >
             {t('services.title')}
           </motion.h2>
@@ -86,13 +86,13 @@ const ServicesSection = () => {
             <motion.div
               key={service.id}
               variants={itemVariants}
-              className="group p-8 rounded-2xl bg-warmBeige dark:bg-white/5 backdrop-blur-md border border-warmDark/10 dark:border-white/10 hover:bg-gold/10 dark:hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
+              className="group p-8 rounded-2xl bg-gray-50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 hover:bg-gold/10 dark:hover:bg-white/10 transition-all duration-500 hover:-translate-y-2">
             >
               <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-500">
-                <service.icon className="text-3xl text-gold group-hover:text-warmDark transition-colors duration-500" />
+                <service.icon className="text-3xl text-gold group-hover:text-gray-900 transition-colors duration-500" />
               </div>
-              <h4 className="text-xl font-serif font-bold text-warmDark dark:text-white mb-4 group-hover:text-gold transition-colors">{service.title}</h4>
-              <p className="text-warmDark/60 dark:text-white/60 leading-relaxed font-light">
+              <h4 className="text-xl font-serif font-bold text-gray-900 dark:text-white mb-4 group-hover:text-gold transition-colors">{service.title}</h4>
+              <p className="text-gray-600 dark:text-white/60 leading-relaxed font-light">
                 {service.description}
               </p>
             </motion.div>

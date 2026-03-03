@@ -8,9 +8,6 @@
   --color-primary: #1A1714; /* Deep Charcoal */
   --color-secondary: #F5F1E9; /* Warm Beige */
   --color-accent: #D4AF37; /* Champagne Gold */
-  
-  background-color: var(--color-primary);
-  color: #E8E4D9;
 }
 
 h1, h2, h3, h4, h5, h6 {

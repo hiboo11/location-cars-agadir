@@ -21,7 +21,7 @@ function App() {
     <ThemeProvider>
       <LanguageProvider>
         <BookingProvider>
-          <div className="min-h-screen transition-colors duration-300 bg-warmBeige text-warmDark dark:bg-warmDark dark:text-warmLight">
+          <div className="min-h-screen transition-colors duration-300 bg-white text-gray-900 dark:bg-warmDark dark:text-warmLight">
             <Navbar />
             <HeroSlider />
             <AboutSection />

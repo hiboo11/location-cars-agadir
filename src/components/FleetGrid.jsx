@@ -14,7 +14,7 @@ const FleetGrid = () => {
     : fleetData.filter(car => car.category === filter);
 
   return (
-    <section id="fleet" className="py-24 bg-warmBeige dark:bg-warmDark relative transition-colors duration-300">
+    <section id="fleet" className="py-24 bg-gray-50 dark:bg-warmDark relative transition-colors duration-300">
       <div className="container mx-auto px-6">
         
         {/* Section Header */}
@@ -31,7 +31,7 @@ const FleetGrid = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-serif text-warmDark dark:text-white/90"
+            className="text-4xl md:text-5xl font-serif text-gray-900 dark:text-white/90">
           >
             {t('fleet.title')}
           </motion.h2>
@@ -50,7 +50,7 @@ const FleetGrid = () => {
               onClick={() => setFilter(cat)}
               className={`px-8 py-2 rounded-full text-sm uppercase tracking-wider transition-all duration-300 border border-gold ${
                 filter === cat
-                  ? 'bg-gold text-warmDark font-bold shadow-lg shadow-gold/20 scale-105'
+                  ? 'bg-gold text-gray-900 font-bold shadow-lg shadow-gold/20 scale-105'
                   : 'bg-transparent text-gold hover:bg-gold/10'
               }`}
             >
